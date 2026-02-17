@@ -1,0 +1,21 @@
+# .htaccess untuk folder uploads
+# Membatasi akses hanya ke file gambar
+
+<FilesMatch "\.(jpg|jpeg|png|gif)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|jsp|asp|htm|shtml|sh|cgi)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Mencegah directory listing
+Options -Indexes
+
+# Mencegah akses ke file .htaccess
+<Files .htaccess>
+    Order Allow,Deny
+    Deny from all
+</Files>
